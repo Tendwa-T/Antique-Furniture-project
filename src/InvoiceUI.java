@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.PrivateKey;
 import java.text.NumberFormat;
 
 public class InvoiceUI extends JFrame {
     private JLabel areaLabel, areaValue,areaPrice;
     private JLabel drawerLabel, drawerVal, drawerPrice;
     private JLabel woodLabel,woodVal, woodPrice;
-    private JLabel totalPriceLabel, totalPriceVal,totalPrice;
+    private JLabel totalPriceLabel,totalPrice;
+    private JLabel numberOfTablesLabel,numberOfTables;
     private JLabel description, pageTitle, value, cost;
     private JLabel divider, divider1;
     private JTextField widthField, lengthField;
@@ -19,7 +19,7 @@ public class InvoiceUI extends JFrame {
 
 
 
-    public InvoiceUI(CustomTable table) {
+    public InvoiceUI(CustomTable table, int numOfTables) {
         setTitle("Invoice");
         Font tlfont = new Font("", Font.BOLD,20);
         Font lbFont = new Font("",Font.PLAIN, 15);
@@ -86,6 +86,13 @@ public class InvoiceUI extends JFrame {
         totalPrice = new JLabel(String.valueOf(format.format(table.getPrice())));
         totalPrice.setBounds(350,270,100,40);
 
+        numberOfTablesLabel = new JLabel("Table Quantity: ");
+        numberOfTablesLabel.setBounds(150, 320, 100,40);
+        numberOfTablesLabel.setFont(emFont);
+
+        numberOfTables = new JLabel(String.valueOf(numOfTables));
+        numberOfTables.setBounds(350, 320,100,40);
+
         home = new JButton("Home");
         home.setBounds(250,350,100,40);
 
@@ -115,7 +122,6 @@ public class InvoiceUI extends JFrame {
 
 
         add(home);
-        JOptionPane.showMessageDialog(null,"That's It for Your Java Project");
 
         home.addActionListener(new ActionListener() {
             @Override
@@ -134,7 +140,7 @@ public class InvoiceUI extends JFrame {
 
     }
 
-    public InvoiceUI(Table table) {
+    public InvoiceUI(Table table, int numOfTables) {
         setTitle("Invoice");
         Font tlfont = new Font("", Font.BOLD,20);
         Font lbFont = new Font("",Font.PLAIN, 15);

@@ -44,6 +44,7 @@ public class HomeUI extends JFrame {
                     ui.setSize(600,500);
                     ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     ui.setVisible(true);
+                    setVisible(false);
                 } catch (RuntimeException ex){
                     throw new RuntimeException(ex);
                 }

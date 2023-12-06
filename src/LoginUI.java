@@ -8,7 +8,7 @@ public class LoginUI extends JFrame {
     private JLabel userLabel, passLabel;
     private JTextField username;
     private final String userCredential = "Admin";
-    private final char[] passCredential = "ADMIN@1234".toCharArray();
+    private final char[] passCredential = "admin".toCharArray();
     private JPasswordField password;
     private JButton submit, cancel;
 

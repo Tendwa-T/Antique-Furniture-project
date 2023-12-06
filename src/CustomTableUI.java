@@ -14,7 +14,7 @@ public class CustomTableUI extends JFrame {
     private JTextField widthField;
     private JTextField lengthField;
 
-    private JTextField numOfDrawersField;
+    private JTextField numOfDrawersField, numOfTablesField;
     private JButton createButton;
     private  JButton homeButton;
     private JComboBox choices;
@@ -51,11 +51,16 @@ public class CustomTableUI extends JFrame {
         JLabel numOfDrawers = new JLabel("No. of Drawers: ");
         numOfDrawers.setBounds(300,150,150,30);
 
+        numOfTablesField = new JTextField(10);
+        numOfTablesField.setBounds(400,200,150,30);
+        JLabel numOfTables = new JLabel("No. of Drawers: ");
+        numOfTables.setBounds(300,200,150,30);
+
         createButton = new JButton("Create Table");
-        createButton.setBounds(300,200,150,40);
+        createButton.setBounds(300,300,150,40);
 
         homeButton = new JButton("Home");
-        homeButton.setBounds(100,200,150,40);
+        homeButton.setBounds(100,300,150,40);
 
 
 
@@ -73,6 +78,9 @@ public class CustomTableUI extends JFrame {
         add(numOfDrawers);
         add(numOfDrawersField);
 
+        add(numOfTables);
+        add(numOfTablesField);
+
         add(createButton);
         add(homeButton);
 
@@ -84,10 +92,12 @@ public class CustomTableUI extends JFrame {
                     float length = Float.parseFloat(lengthField.getText());
                     int numOfDrawers = Integer.parseInt(numOfDrawersField.getText());
                     String woodType = (String) choices.getItemAt(choices.getSelectedIndex());
+                    int tablesCount = Integer.parseInt(numOfTablesField.getText());
                     String orderID = orderIDGen();
 
                     CustomTable table = new CustomTable(width, length, woodType, numOfDrawers);
                     table.getData();
+                    table.discount(tablesCount);
                     FileWriter writer = new FileWriter("CustomTableDetails.txt",true);
 
                     writer.append("{" + "\n");
@@ -114,7 +124,8 @@ public class CustomTableUI extends JFrame {
 
                     statement.close();
                     connection.close();
-                    InvoiceUI ui =new InvoiceUI(table);
+
+                    InvoiceUI ui =new InvoiceUI(table, tablesCount);
                     ui.setSize(600,500);
                     ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     ui.setVisible(true);

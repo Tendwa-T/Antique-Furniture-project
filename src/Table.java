@@ -69,4 +69,9 @@ public class Table {
     public float getArea(){
         return (this.length*this.width);
     }
+    protected void discount(int numOfTables){
+        if (numOfTables>1){
+            this.price = (float) ((this.price*numOfTables)*0.95);
+        }
+    }
 }
