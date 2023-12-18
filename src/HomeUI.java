@@ -3,8 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class HomeUI extends JFrame {
-    private JButton standardTbl = new JButton("Standard Table");
-    private JButton customTbl = new JButton(" Custom Table");
+    private JButton standardTbl = new JButton(" Standard Table ");
+    private JButton customTbl = new JButton(" Custom Table ");
+    private JButton showOrders = new JButton(" Show Orders ");
 
     public HomeUI(){
         setTitle("Antique Furniture Kenya");
@@ -14,12 +15,15 @@ public class HomeUI extends JFrame {
 
         customTbl.setBounds(300,200,150,40);
         standardTbl.setBounds(100,200,150,40);
+        showOrders.setBounds(200,250,150,40);
 
         setLayout(null);
         add(pageLabel);
 
         add(customTbl);
         add(standardTbl);
+        add(showOrders);
+
 
         customTbl.addActionListener(new ActionListener() {
             @Override
@@ -48,6 +52,21 @@ public class HomeUI extends JFrame {
                 } catch (RuntimeException ex){
                     throw new RuntimeException(ex);
                 }
+            }
+        });
+        showOrders.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    ShowOrdersUI ui = new ShowOrdersUI();
+                    ui.setSize(600,500);
+                    ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    ui.setVisible(true);
+                    setVisible(false);
+                } catch (RuntimeException ex){
+                    throw new RuntimeException(ex);
+                }
+
             }
         });
     }

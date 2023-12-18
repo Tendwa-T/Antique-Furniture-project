@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class CustomTable extends Table{
-    int numOfDrawers;
+    private int numOfDrawers;
     public CustomTable(float width, float length, String woodType, int numOfDrawers){
         super(width, length, woodType);
         this.numOfDrawers = numOfDrawers;

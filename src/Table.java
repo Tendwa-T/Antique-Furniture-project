@@ -3,7 +3,6 @@ import java.text.NumberFormat;
 public class Table {
     NumberFormat format = NumberFormat.getNumberInstance();
     private float width;
-
     private float length;
     private float price;
     private String woodType;

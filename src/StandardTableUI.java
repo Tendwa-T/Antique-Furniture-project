@@ -25,9 +25,32 @@ public class StandardTableUI extends JFrame {
             JLabel tableCount = new JLabel("No of Tables: ");
             tableCount.setBounds(10, 200, 200, 30);
 
+            JLabel widthLabel = new JLabel("Width: ");
+            widthLabel.setBounds(10, 100, 100, 30);
+
+            JLabel lengthLabel = new JLabel("Length: ");
+            lengthLabel.setBounds(300, 100, 100, 30);
+
+            JLabel drawers = new JLabel("No of Drawers: ");
+            drawers.setBounds(10, 150, 100, 30);
+
+            JLabel priceLabel = new JLabel("Price: ");
+            priceLabel.setBounds(300, 150, 150, 30);
+
             setLayout(null);
             add(numOfTableField);
             add(tableCount);
+
+            add(pageLabel);
+
+            add(widthLabel);
+
+            add(lengthLabel);
+            add(drawers);
+
+
+            add(priceLabel);
+
 
             homeButton = new JButton("Home");
             homeButton.setBounds(50,300,100,40);
@@ -36,7 +59,7 @@ public class StandardTableUI extends JFrame {
             generateInvButton.setBounds(350,300,150,40);
 
             generateOrderButton = new JButton("Generate order");
-            generateOrderButton.setBounds(150,300,150,40);
+            generateOrderButton.setBounds(180,300,150,40);
 
             add(generateInvButton);
             add(homeButton);

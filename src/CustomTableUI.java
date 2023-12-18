@@ -53,7 +53,7 @@ public class CustomTableUI extends JFrame {
 
         numOfTablesField = new JTextField(10);
         numOfTablesField.setBounds(400,200,150,30);
-        JLabel numOfTables = new JLabel("No. of Drawers: ");
+        JLabel numOfTables = new JLabel("No. of Tables: ");
         numOfTables.setBounds(300,200,150,30);
 
         createButton = new JButton("Create Table");
