@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -114,7 +113,7 @@ public class CustomTableUI extends JFrame {
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection connection = DriverManager.getConnection(
-                            "jdbc:mysql://localhost:3306/java_proj","root","Captainscabin"
+                            "jdbc:mysql://localhost:3306/java_proj","root","Captainscabin@123"
                     );
 
                     Statement statement = connection.createStatement();

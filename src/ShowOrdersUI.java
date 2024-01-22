@@ -35,7 +35,7 @@ public class ShowOrdersUI extends JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/java_proj","root","Captainscabin"
+                    "jdbc:mysql://localhost:3306/java_proj","root","Captainscabin@123"
             );
             ArrayList<String> orderIDList = new ArrayList<>();
             ArrayList<String> woodTypeList = new ArrayList<>();
